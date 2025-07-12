@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Profile Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #141e30 0%, #243b55 100%);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1s ease;
+            color: #e0e0e0;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            max-width: 480px;
+            margin: 50px auto;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.8s ease;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        header h1 {
+            margin-bottom: 16px;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .profile-photo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .profile-photo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.6);
+            margin-bottom: 8px;
+            transition: transform 0.3s;
+        }
+
+        .profile-photo img:hover {
+            transform: scale(1.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        label {
+            font-weight: 500;
+            margin-bottom: 6px;
+            text-align: left;
+            color: #d1d1d1;
+        }
+
+        .required {
+            color: #ff6b6b;
+            margin-left: 2px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            padding: 12px 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            outline: none;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: none;
+            font-family: inherit;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 14px 0;
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+
+        select option {
+            color: black;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Header with Profile Photo -->
+        <header>
+            <h1>Create Your Profile</h1>
+            <div class="profile-photo">
+                <img id="preview" src="https://via.placeholder.com/100" alt="Profile Photo">
+                <input type="file" id="photo-upload" accept="image/*" required>
+            </div>
+        </header>
+
+        <!-- Profile Form -->
+        <form id="profile-form">
+            <div class="form-group">
+                <label for="name">Name<span class="required">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email<span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="Your email">
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location <small>(Optional)</small></label>
+                <input type="text" id="location" name="location" placeholder="City, Country">
+            </div>
+
+            <div class="form-group">
+                <label for="skills-offered">Skills Offered</label>
+                <textarea id="skills-offered" name="skills-offered" rows="4"
+                    placeholder="E.g., Web Development, Graphic Design"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="skills-wanted">Skills Wanted</label>
+                <textarea id="skills-wanted" name="skills-wanted" rows="4"
+                    placeholder="E.g., SEO, Video Editing"></textarea>
+            </div>
+
+            <!-- Availability Option Selection Box -->
+            <div class="form-group">
+                <label for="availability">Availability<span class="required">*</span></label>
+                <select id="availability" name="availability" required>
+                    <option value="">Select Availability</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekend">Weekend</option>
+                    <option value="evening">Evening</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <!-- Public/Private Option Selection Box -->
+            <div class="form-group">
+                <label for="visibility">Profile Visibility<span class="required">*</span></label>
+                <select id="visibility" name="visibility" required>
+                    <option value="">Select Visibility</option>
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit Profile</button>
+        </form>
+    </div>
+
+    <script>
+        // Preview uploaded profile image
+        document.getElementById("photo-upload").addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("preview").src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+          document.getElementById("photo-upload").addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        document.getElementById("preview").src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // ✅ Redirect to submit.html after form submission
+  document.getElementById("profile-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent actual form submission
+
+    // Optional: Validate fields or process data here
+
+    // Redirect to submit.html
+    window.location.href = "/submit.html";
+  });
+    </script>
+</body>
+
+</html>

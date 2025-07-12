@@ -1,0 +1,215 @@
+body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      animation: fadeIn 1s ease;
+    }
+
+    /* Header Styling */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, #6dd5ed, #2193b0);
+      color: white;
+      padding: 14px 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header strong {
+      font-size: 1.5rem;
+      animation: slideInLeft 0.8s ease;
+    }
+
+    .search-bar {
+      flex: 1;
+      margin: 0 30px;
+      position: relative;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 25px;
+      border: none;
+      font-size: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s;
+    }
+
+    .search-bar input:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(109, 213, 237, 0.3);
+    }
+
+    .right-buttons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .right-buttons button {
+      background: rgba(255,255,255,0.95);
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .right-buttons button:hover {
+      background: #e0f0f8;
+      transform: translateY(-2px);
+    }
+
+    .right-buttons .icon {
+      font-size: 18px;
+    }
+
+    /* Suggested Swaps Section */
+    .suggested-section {
+      background: #eaf4fb;
+      padding: 40px 20px;
+      animation: slideInUp 1s ease;
+    }
+
+    .swap-container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .swap-card {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.6s ease;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .swap-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .swap-card img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 24px;
+      border: 2px solid #6dd5ed;
+    }
+
+    .swap-info {
+      flex: 1;
+      text-align: center;
+    }
+
+    .swap-info div {
+      margin: 4px 0;
+    }
+
+    .swap-info .name {
+      font-weight: 600;
+      font-size: 17px;
+      color: #2193b0;
+    }
+
+    .swap-info span {
+      font-weight: 500;
+    }
+
+    .offers { color: #007bff; }
+    .wants { color: #28a745; }
+
+    .message-btn {
+      background: #f1f3f5;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 13px;
+      cursor: pointer;
+      margin-top: 6px;
+      transition: background 0.3s;
+    }
+
+    .message-btn:hover {
+      background: #e2e6ea;
+    }
+
+    .request-btn {
+      background: linear-gradient(135deg, #6dd5ed, #2193b0);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 15px;
+      cursor: pointer;
+      margin-left: 24px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .request-btn:hover {
+      background: #2193b0;
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      .swap-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .request-btn {
+        margin: 14px 0 0 0;
+        width: 100%;
+      }
+
+      .search-bar {
+        margin: 10px 0;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .right-buttons {
+        justify-content: center;
+        margin-top: 10px;
+      }
+    }

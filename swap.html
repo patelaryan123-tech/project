@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Send Skill Swap Request</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<!-- User Card Section -->
+<div class="user-section">
+  <div class="user-card">
+    <strong>Het</strong>
+    <p>Skills: Photoshop, Video Editing</p>
+  </div>
+</div>
+
+<!-- Skill Swap Request Form -->
+<div class="container">
+  <div class="header">
+    <h2>Send Skill Swap Request</h2>
+  </div>
+  <form id="request-form">
+    <div>
+      <label for="offered">Your Offered Skills:</label>
+      <input type="text" id="offered" name="offered" placeholder="e.g., Web Design, Writing" required>
+    </div>
+
+    <div>
+      <label for="wanted">Skills You Want:</label>
+      <input type="text" id="wanted" name="wanted" placeholder="e.g., SEO, Photography" required>
+    </div>
+
+    <div>
+      <label for="message">Message or Description:</label>
+      <textarea id="message" name="message" placeholder="Write something to the person..." required></textarea>
+    </div>
+
+    <button type="submit">Send Request</button>
+    <div id="confirmation" class="sent-message" style="display: none;">Request Sent ✅</div>
+  </form>
+</div>
+
+<script>
+  document.getElementById('request-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent page reload
+    document.getElementById('confirmation').style.display = 'block';
+    this.reset(); // Clear form
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skill Swap Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div><strong>SkillSwap</strong></div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Find your swap...">
+    </div>
+
+    <div class="right-buttons">
+      <button id="notification-btn">
+        <span class="icon">🔔</span> 
+      </button>
+      <button id="profile-btn">Profile</button>
+    </div>
+  </div>
+
+  <!-- Suggested Swaps -->
+  <div class="suggested-section">
+    <div class="swap-container">
+
+      <!-- Swap Card 1 -->
+      <div class="swap-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile">
+        <div class="swap-info">
+          <div class="name">Het</div>
+          <div><span class="offers">Offers:</span> Web development</div>
+          <div><span class="wants">Wants:</span> web Tutoring</div>
+          <div>
+            <button class="message-btn">Message</button>
+          </div>
+        </div>
+        <button class="request-btn">Request</button>
+      </div>
+
+      <!-- Swap Card 2 -->
+      <div class="swap-card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile">
+        <div class="swap-info">
+          <div class="name">Diya</div>
+          <div><span class="offers">Offers:</span> Software developer</div>
+          <div><span class="wants">Wants:</span> Web Design Help</div>
+          <div>
+            <button class="message-btn">Message</button>
+          </div>
+        </div>
+        <button class="request-btn">Request</button>
+      </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Select all buttons with the class 'request-btn'
+    const requestButtons = document.querySelectorAll('.request-btn');
+
+    requestButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        window.location.href = 'swap.html';  // ✅ Navigate to swap.html
+      });
+    });
+  });
+</script>
+    </div>
+  </div>
+
+</body>
+</html>
